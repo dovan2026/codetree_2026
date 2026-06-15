@@ -1,13 +1,9 @@
-N = int(input())
-list_M = []
+# 1. 데이터의 개수를 정수로 안전하게 입력받음
+n = int(input())
 
-for i in range(N):
-    try:
-        row = list(map(int, input().split()))
-        squared_row = [num ** 2 for num in row]
-        list_M.append(squared_row)
-    except EOFError:
-        # 읽을 입력이 더 이상 없으면 에러를 내지 않고 루프를 종료
-        break
+# 2. 반복 변수명을 num으로 명확히 분리하고, 입력받은 개수(n)만큼만 슬라이싱
+li1 = [int(num) for num in input().split()][:n]
 
-print(*list_M[0])
+# 3. 각 원소의 제곱 출력
+for i in li1:
+    print(i**2, end=' ')
